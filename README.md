@@ -16,7 +16,7 @@
 ## :beginner: About
 
 A simple project to demonstrate how to signals in django
-
+Please refer my blog for more details :)
 
 ## :wrench: Development
 
