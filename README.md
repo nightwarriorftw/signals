@@ -28,8 +28,6 @@ Signal Dispatcher are nothing but a well known design pattern [Observer Pattern]
 
 ### :nut_and_bolt: Development Environment
 
-- Backend
-
 #### 1. Clone the repo
 
 ```
@@ -39,7 +37,7 @@ cd signals
 
 #### 2. Setup project
 
-Install `docker` and `docker-compose`. After installing those, start the docker-compose
+Install `[docker](https://docs.docker.com/engine/install/)` and `[docker-compose](https://docs.docker.com/compose/install/)`. After installing those, start the docker-compose
 
 ```
 docker-compose up
