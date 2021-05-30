@@ -37,7 +37,15 @@ cd signals
 
 #### 2. Setup project
 
-Install `[docker](https://docs.docker.com/engine/install/)` and `[docker-compose](https://docs.docker.com/compose/install/)`. After installing those, start the docker-compose
+Install [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/). After installing those run the following commands
+
+- build the docker image
+
+```
+docker-compose build
+```
+
+- run docker-compose
 
 ```
 docker-compose up
