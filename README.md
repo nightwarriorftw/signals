@@ -49,12 +49,12 @@ docker-compose build
 
 ```
 docker-compose up
-````
+```
 
 It may take some time to pull all images and build them. Be patient :)
 
 
-#### 4. Makemigrations, migrate and run the server
+#### 3. Makemigrations, migrate and run the server
 
 Open a new terminal and enter the `api` container with the help of the following command
 
