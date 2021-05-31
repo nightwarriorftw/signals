@@ -130,8 +130,8 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 # Celery Beat schedule
 CELERY_BEAT_SCHEDULE = {
-    'hello': {
-        'task': 'custom_signal.tasks.hello',
+    'world': {
+        'task': 'custom_signal.tasks.world',
         'schedule': crontab()
     }
 }

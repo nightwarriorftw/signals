@@ -1,3 +1,4 @@
+from custom_signal.tasks import hello_world
 from django.db import models
 
 class Author(models.Model):
@@ -24,6 +25,7 @@ class Book(models.Model):
         if self.is_published:
             from custom_signal.signals import book_published
             book_published.send(sender=self.__class__, author=self.author, book=self)
+            hello_world.delay(1212, "hello world")
 
     def __str__(self) -> str:
         return f'<{self.title} by {self.author.name}>'

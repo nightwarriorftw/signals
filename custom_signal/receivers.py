@@ -1,6 +1,7 @@
 from django.dispatch import receiver
 from custom_signal.signals import book_published
 
+from custom_signal.tasks import hello_world
 
 @receiver(book_published)
 def send_notification_on_book_published(sender, **kwargs):
