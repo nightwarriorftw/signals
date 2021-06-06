@@ -1,7 +1,7 @@
 from django.contrib import admin
+from subject.models import Author
+from subject.models import Book
 
-from custom_signal.models import Author
-from custom_signal.models import Book
 
 admin.site.register(Author)
 admin.site.register(Book)

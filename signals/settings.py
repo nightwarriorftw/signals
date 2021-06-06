@@ -2,22 +2,23 @@ import environ
 from pathlib import Path
 from celery.schedules import crontab
 
-env = environ.Env(DEBUG=(bool, False))
-
-environ.Env.read_env()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("SECRET_KEY")
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -31,8 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'custom_signal',
-    'django_extensions',
+    "subject",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -130,8 +131,8 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 # Celery Beat schedule
 CELERY_BEAT_SCHEDULE = {
-    'world': {
-        'task': 'custom_signal.tasks.world',
+    'hello': {
+        'task': 'subject.tasks.hello',
         'schedule': crontab()
     }
 }
