@@ -20,10 +20,9 @@ class Book(models.Model):
         is_object_created = self.pk
         super().save(*args, **kwargs)
         if is_object_created and self.is_published:
-            print(is_object_created, self.is_published)
             from subject.signals import book_published
             with transaction.atomic():
-                transaction.on_commit(book_published.send(sender=Book, author=self.author.name, book=self.title))
+                transaction.on_commit(lambda: book_published.send(sender=Book, author=self.author.name, book=self.title))
 
     def __str__(self) -> str:
         return f'<{self.title} by {self.author.name}>'
